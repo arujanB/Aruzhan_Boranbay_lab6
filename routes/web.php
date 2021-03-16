@@ -105,3 +105,7 @@ Route::get('/trash', function(){
 	$post = Student::withTrashed()->where('id', 9)->get();
 	return $post;
 });
+
+Route::get('/restore', function(){
+	Student::withtrash()->where('id', 9)->restore();
+});
